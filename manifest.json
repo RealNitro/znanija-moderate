@@ -1,0 +1,32 @@
+{
+    "name": "Znanija Moderate",
+    "description": "Сделано чтобы помочь при модерации ответов на Знаниях",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://znanija.com/*"],
+            "css": ["style.css"],
+            "js": ["content.js"]
+        }
+    ],
+    "permissions": ["activeTab"],
+    "icons": {
+        "16": "img/icon_16.png",
+        "32": "img/icon_32.png",
+        "48": "img/icon_48.png",
+        "128": "img/icon_128.png"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "img/icon_16.png",
+            "32": "img/icon_32.png",
+            "48": "img/icon_48.png",
+            "128": "img/icon_128.png"
+        }
+    }
+  }
