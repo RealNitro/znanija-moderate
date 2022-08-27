@@ -13,7 +13,14 @@
             "js": ["content.js"]
         }
     ],
-    "permissions": ["activeTab"],
+    "host_permissions": [
+        "https://znanija.com/*"
+    ],
+    "permissions": [
+        "activeTab",
+        "tabs",
+        "scripting"
+    ],
     "icons": {
         "16": "img/icon_16.png",
         "32": "img/icon_32.png",
