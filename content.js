@@ -38,13 +38,17 @@ function znanijaLoaded() {
 
         if (words.length < 5) {
             document.querySelectorAll('.js-answer-content')[i].appendChild(automodText)
-            automodText.innerHTML = "<hr><b>Авто-модерация: Вопрос может содержать спам</b>"
+            automodText.innerHTML = "<hr><b>Авто-модерация: Ответ может содержать спам</b>"
             currentAnswer.className += " zm-warned-answer"
+
+            createPopup('Авто-модерация: Помеченный ответ может содержать спам')
         }
 
         if (checkText(answerText)) {
             currentAnswer.className += " zm-warned-answer"
-            currentAnswer.innerHTML += "<br><b>Авто-модерация: Содержит маты</b>"
+            currentAnswer.innerHTML += "<br><b>Авто-модерация: Ответ содержит маты</b>"
+
+            createPopup('Авто-модерация: Помеченный ответ содержит маты')
         }
     }
 
@@ -72,7 +76,7 @@ function copyQuestionLink() {
 
     navigator.clipboard.writeText("https://znanija.com/task/" + questionId)
 
-    alert('Ссылка на задание скопирована!')
+    createPopup('Ссылка успешно скопирована!')
 }
 
 function createButton(parent = document, text, id) {
@@ -82,6 +86,21 @@ function createButton(parent = document, text, id) {
     button.innerText = text
 
     parent.appendChild(button)
+}
+
+function createPopup(text) {
+    var body = document.body
+    var element = document.createElement('div')
+    
+    element.className = 'zm-popup'
+    element.innerHTML = `<span>${text}</span>`
+
+    setTimeout(() => {
+        element.style = 'animation: .5s fade-out'
+        setTimeout(() => element.remove(), 500)
+    }, 5000)
+
+    body.appendChild(element)
 }
 
 function checkText(text) {
