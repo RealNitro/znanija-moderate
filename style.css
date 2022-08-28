@@ -1,0 +1,20 @@
+.zm-questionbox-information {
+    padding: 5px;
+    border: 1px #ccc solid;
+    border-radius: 5px;
+    background: -webkit-linear-gradient(top, rgb(255, 255, 255), rgb(199, 199, 199));
+    font-weight: 700;
+}
+
+.zm-button {
+    border: 1px #ccc solid;
+    border-radius: 5px;
+}
+
+.zm-button:hover {
+    background: -webkit-linear-gradient(top, rgb(255, 255, 255), rgb(167, 167, 167));
+}
+
+.zm-warned-answer {
+    box-shadow: 0 0 15px #e03d3d;
+}
